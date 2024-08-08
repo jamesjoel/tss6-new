@@ -1,0 +1,41 @@
+body{
+    /* background-color: #500e7e; */
+    background-color: #f97cca;
+}
+.demo1{
+    color : blue;
+}
+.demo2{
+    color : pink;
+}
+.demo3{
+    color : white;
+}
+
+.bg1{
+   background-color: #406030; 
+}
+.bg2{
+    background-color: #4ACD12;
+}
+
+.box1{
+    height: 80px;
+    width: 100%;
+    background-color: #560838;
+}
+.box2{
+    height: 40px;
+    width: 100%;
+    background-color: #FFF;
+}
+.box3{
+    height: 800px;
+    width: 100%;
+    background-color: #000;
+}
+.box4{
+    height: 300px;
+    width: 100%;
+    background-color: #560838;
+}
