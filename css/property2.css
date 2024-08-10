@@ -1,0 +1,28 @@
+body{
+    /* background-color: #ccc; */
+    margin: 0;
+    padding: 0;
+}
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: #457899;
+    border-radius: 50px 50px 50px 50px;
+    transition: 1s;
+    margin: 50px;
+
+    
+
+    
+    /*             t  r  b  l  */
+
+    /* border-top : 20px solid red;
+    border-bottom : 20px solid red;
+    border-left : 20px solid green;
+    border-right : 20px solid green; */
+}
+.box:hover{
+    
+    background-color: red;
+    /* margin:  200px; */
+}
