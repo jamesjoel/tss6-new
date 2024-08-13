@@ -1,0 +1,30 @@
+body{
+    /* background-color: gray; */
+}
+
+.box{
+    height: 300px;
+    width: 300px;
+    background-color: #fff;
+    margin: 100px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #000;
+    transition: 1s;
+}
+
+.box:hover{
+    box-shadow: 10px 10px 30px #000;
+
+}
+
+h1{
+    color : #fff;
+    font-size: 80px;
+    font-family: Helvetica;
+    text-shadow: 5px 5px 2px #000;
+    transition: 1s;
+}
+h1:hover{
+    
+    text-shadow: 5px 5px 10px #000;
+}
