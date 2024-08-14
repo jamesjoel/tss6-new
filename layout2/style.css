@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    background-color: #E3E4E8;
+}
+.social{
+    background-color: #3C3C3C;
+    width: 100%;
+    height: 60px;
+}
+.navbar{
+    background-color: #343434;
+    width: 100%;
+    height: 45px;
+}
+.header{
+    background-color: #252525;
+    width: 100%;
+    height: 40px;
+}
+.slider{
+    /* background-color: red; */
+    width: 100%;
+    height: 300px;
+}
+.content{
+    
+    width: 100%;
+    min-height: 700px;
+    
+}
+.top-footer{
+    background-color: #343434;
+    width: 100%;
+    height: 250px;
+}
+.footer{
+    background-color: #000;
+    width: 100%;
+    height: 60px;
+}
+.wrapper{
+    width: 970px;
+    margin: 0 auto;
+}
+.social-nav{
+    height: 60px;
+    width: 500px;
+    float: right;
+    /* background-color: red; */
+}
+/* specifc selector */
+.social-nav ul{
+    list-style-type: none;
+}
+.social-nav ul li{
+    float: left;
+}
+.social-nav ul li a{
+    text-decoration: none;
+    color : #fff;
+    display: inline-block;
+    background-color: #252525;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 3px 5px;
+}
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.navbar ul li{
+    float: left;
+}
+.navbar ul li a{
+    color : #fff;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    padding: 10px 20px;
+}
+.navbar ul li a:hover{
+    background-color: red;
+}
+
+ 
