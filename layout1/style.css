@@ -1,15 +1,8 @@
 body{
     background-color: #90898d;
-<<<<<<< HEAD
-    margin:0;
-    padding:0;
-    font-family:  Helvetica;
-
-=======
     margin: 0;
     padding: 0;
     font-family: Helvetica;
->>>>>>> 9aeefb9813af974791e8766776e9d60f05590e14
 }
 .header{
     height: 120px;
@@ -18,13 +11,8 @@ body{
 }
 .menu{
     height: 60px;
-<<<<<<< HEAD
-    width:100%;
-    background-color: black;
-=======
     width: 100%;
     background-color: #000;
->>>>>>> 9aeefb9813af974791e8766776e9d60f05590e14
 }
 .content{
     height: 800px;
@@ -40,8 +28,6 @@ body{
     width: 970px;
     
     margin: 0 auto;
-<<<<<<< HEAD
-=======
 }
 .logo{
     height: 120px;
@@ -56,5 +42,4 @@ body{
     background-color: #FFF;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 5px 5px 5px #000;
->>>>>>> 9aeefb9813af974791e8766776e9d60f05590e14
 }
