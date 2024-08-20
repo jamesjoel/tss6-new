@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+    background-color: rgb(228,229,233)
+}
+.social{
+    background-color:rgb(60,60,60) ;
+    height: 60px ;
+    width: 100%;
+
+}
+.nav-bar{
+    background-color: rgb(52,52,52);
+    height: 45px;
+    width: 100%;
+
+}
+.header{
+    background-color: rgb(37,37,37);
+    height: 40px;
+    width: 100%;
+
+}
+.slider{
+    height:300px ;
+    width: 100%;
+
+}
+.content{
+    height: auto;
+    min-height:700px ;
+    width: 100%;
+}
+.top-footer{
+    background-color:rgb(37,36,41) ;
+    height:250px ;
+    width: 100%;
+}
+.footer{
+    background-color: rgb(13,13,13);
+    height: 60px;
+    width: 100%;
+}
+.wrapper{
+    margin: 0 auto;
+    width: 970px;
+}
+.social-nav{
+    height: 60px;
+    width: 500px;
+    float:right ;
+    
+}
+.social-nav ul{
+    list-style-type: none;
+
+}
+.social-nav ul li{
+    float: left;
+}
+.social-nav ul li a{
+    text-decoration: none;
+    color:white ;
+    display: inline-block;
+    padding: 10px;
+    margin: 3px 5px;
+    background-color: rgb(48,48,48);
+    border-radius: 20px;
+}
+.nav-bar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-bar ul li{
+    float: left;
+}
+.nav-bar ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    margin: 5px;
+    padding: 10px 20px;
+
+}
+.nav-bar ul li a:hover{
+    background-color: red;
+}

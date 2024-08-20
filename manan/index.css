@@ -1,0 +1,47 @@
+body{
+    background-color: rgb(52,49,49);
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+}
+.menu{ 
+    height: 60px;
+    width: 100%;
+    background-color: rgb(8, 8, 8);
+
+}
+.content{
+    height: 800px;
+    width: 100%;
+    
+}
+.footer{
+    height:250px ;
+    width: 100% ;
+    background-color:rgb(32,129,221) ;
+}
+.header{
+    height: 120px;
+    width: 100%;
+    background-color: rgb(32,129,221);
+}
+.wrapper{
+    width: 970px;
+    margin: 0 auto;
+}
+.logo{
+    height: 120px;
+    width: 220px;
+    background-color: #fff;
+    float: left;
+
+}
+.login-menu{
+    height: 30px;
+    width: 200px;
+    background-color: #fff;
+    float: right;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 5px 5px 5px #000;
+
+}
