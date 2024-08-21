@@ -52,7 +52,7 @@ body{
 
 .wrapper{
     width:970px;
-    height:0 auto;
+    margin:0 auto;
 }
 
 .social-nav{
