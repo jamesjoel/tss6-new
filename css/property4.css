@@ -1,0 +1,25 @@
+body{
+    background-color: #ccc120;
+    margin: 0;
+    padding: 0;
+}
+.box{
+    /* margin-top: 20px; */
+    /* margin: 5px 0px 25px 50px; */
+    /*       t   r   b    l*/
+    height: 210px;
+    border : 10px solid #000;
+    width: 210px;
+    padding: 15px;
+    margin: 20px;
+    background-color: #602222;
+    text-align: justify;
+    float: left;
+}
+.box2{
+    float: left;
+    height: 300px;
+    width: 300px;
+    background-color: blue;
+}
+
