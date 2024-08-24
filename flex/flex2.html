@@ -38,23 +38,28 @@
             height: 700px;
             background-color: blue;
         }
-        .content-center{
-            width: 500px;
-            /* height: 700px; */
-            background-color: red;
-            display: flex;
-            justify-content: space-evenly;
-            /* flex-wrap: wrap-reverse */
-        }
         .content-right{
             width: 200px;
             height: 700px;
             background-color: blue;
         }
+        .content-center{
+            width: 500px;
+            /* height: 700px; */
+            background-color: red;
+            display: flex;
+            flex-wrap: wrap;
+
+            /* flex-wrap: wrap-reverse */
+        }
         .box{
             height: 150px;
             width: 150px;
-            background-color: #000;
+            flex-basis: 25%;
+            
+            
+            border:1px solid #000;
+            background-color: #7ACD10;
         }
     </style>
 </head>
@@ -64,10 +69,25 @@
         <div class="warpper">
             <div class="content-left"></div>
             <div class="content-center">
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                
+                <!-- <div class="box"></div>                
                 <div class="box"></div>                
-                <div class="box"></div>                
-                <div class="box"></div>                
-                <div class="box"></div>                
+                <div class="box"></div>                 -->
             </div>
             <div class="content-right"></div>
         </div>
