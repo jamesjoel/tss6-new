@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+
+        }
+        .header{
+            background-color: rgb(15, 162, 86);
+            height: 120px;
+            width: 100%;
+        }
+        .content{
+            /* background-color: rgb(162, 15, 140); */
+            height: auto;
+            min-height: 700px;
+            width: 100%;
+            
+        }
+        .footer{
+            background-color: #000;
+            height: 250px;
+            width: 100%;
+        }
+        .warpper{
+            width: 970px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .content-left{
+            width: 200px;
+            height: 700px;
+            background-color: blue;
+        }
+        .content-right{
+            width: 200px;
+            height: 700px;
+            background-color: blue;
+        }
+        .content-center{
+            width: 500px;
+            /* height: 700px; */
+            background-color: red;
+            display: flex;
+            flex-wrap: wrap;
+
+            /* flex-wrap: wrap-reverse */
+        }
+        .box{
+            height: 150px;
+            width: 150px;
+            flex-basis: 25%;
+            
+            
+            border:1px solid #000;
+            background-color: #7ACD10;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <div class="warpper">
+            <div class="content-left"></div>
+            <div class="content-center">
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                <div class="box">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                </div>                
+                
+                <!-- <div class="box"></div>                
+                <div class="box"></div>                
+                <div class="box"></div>                 -->
+            </div>
+            <div class="content-right"></div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
