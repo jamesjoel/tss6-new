@@ -12,6 +12,9 @@
             background-color: #801db8;
             color : #fff;
         }
+        .text-purple{
+            color : #801db8;
+        }
         .bg-purple{
             background-color: #801db8;
            
@@ -38,6 +41,38 @@
             height: 400px; 
             background-image: url('https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/44fe68e438b997c9.jpeg?q=20');
             background-size: 100% 100%;
+        }
+        .enroll{
+            background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url("https://steppingstone.in/images/enroll-bg.jpg");
+            
+            background-size: 100% 100%;
+            /* opacity: .5; */
+            /* background-color: rgba(0, 0, 0, .1); */
+            /* color : red; */
+        }
+        .btn-info{
+            background-color: #2E073F !important;
+            border : none !important;
+            color : #fff;
+        }
+        .btn-info:hover{
+            color:  #fff;
+            background-color: #801db8 !important;
+        }
+        .services-box, .feature-box, .blog-box{
+            transition: .5s;
+        }
+        .services-box:hover{
+            background-color: #7695FF;
+            box-shadow:  0 0 20px #fff;
+        }
+        .feature-box:hover{
+            background-color: #BEDC74;
+            box-shadow:  0 0 20px #fff;
+        }
+        .blog-box:hover{
+            background-color: #ED3EF7;
+            box-shadow:  0 0 20px #fff;
         }
     </style>
 </head>
@@ -89,6 +124,113 @@
 
         <div class="container-fluid bg-danger hero">
 
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card my-4 services-box">
+                        <div class="card-body text-center">
+                            <i class="fa fa-address-book fa-3x" aria-hidden="true"></i>
+                            <h2 class="mt-3">Our Services</h2>
+                            <p>
+                                <small>
+
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit Lorem ipsum dolor sit amet....
+                                </small>
+                            </p>
+                            <a href="#" class="btn btn-sm btn-info">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card feature-box my-4">
+                        <div class="card-body text-center">
+                            <i class="fa fa fa-cog fa-3x" aria-hidden="true"></i>
+                            <h2 class="mt-3">Our Feature</h2>
+                            <p>
+                                <small>
+
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit Lorem ipsum dolor sit amet....
+                                </small>
+                            </p>
+                            <a href="#" class="btn btn-sm btn-info">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card my-4 blog-box">
+                        <div class="card-body text-center">
+                            <i class="fa fa-info-circle fa-3x" aria-hidden="true"></i>
+                            <h2 class="mt-3">Our Services</h2>
+                            <p>
+                                <small>
+
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit Lorem ipsum dolor sit amet....
+                                </small>
+                            </p>
+                            <a href="#" class="btn btn-sm btn-info">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid enroll">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-md-5 offset-md-1 text-light">
+                        <div class="card border border-0">
+                            <div class="card-header p-4 bg-purple text-light">
+                                <h3 class="mb-0">Enroll Today</h3>
+                                <p class="m-0 p-0"><small> you miss the chance to get your seat!</small></p>
+                            </div>
+                            <div class="card-body">
+                                <div class="my-3">
+                                    <label class="mb-2">Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter Your Name" />
+                                </div>
+                                <div class="my-3">
+                                    <label class="mb-2">Email</label>
+                                    <input type="text" class="form-control" placeholder="Enter Your Email" />
+                                </div>
+                                <div class="my-3">
+                                    <label class="mb-2">Message</label>
+                                    <textarea class="form-control" placeholder="Enter Your Message" ></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <label class="mb-2">Number</label>
+                                    <input type="text" class="form-control" placeholder="Enter Your Number" />
+                                </div>
+                                <div class="d-grid">
+                                    <button class="btn btn-dark p-3">REGISTER NOW</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-light">
+                        <h2>We Have More than 8550+ Students.</h2>
+                        <p class="my-4">We have been educating students on the latest technology since 2003. Since then we have been growing from the combined expertise and commitment of leading IT companies in and around Indore.</p>
+                        <div class="my-5">
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <h2>8K+</h2>
+                                    <h6 class="mt-3 text-purple fw-bold">STUDENTS</h6>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <h2>10+</h2>
+                                    <h6 class="mt-3">COURSES</h6>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <h2>6000+</h2>
+                                    <h6 class="mt-3">PLACEMENTS</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 </body>
 </html>
