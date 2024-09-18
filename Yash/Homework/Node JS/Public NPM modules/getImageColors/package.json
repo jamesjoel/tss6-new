@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "get-image-color": "^1.0.4",
+    "path": "^0.12.7"
+  }
+}
