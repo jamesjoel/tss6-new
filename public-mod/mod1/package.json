@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "console-table-printer": "^2.12.1",
+    "count-files": "^2.6.2",
+    "create-file": "^1.0.1",
+    "search-in-file": "^3.5.2"
+  }
+}
