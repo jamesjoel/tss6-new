@@ -1,10 +1,27 @@
 const routes = require("express").Router();
 const Emp = require("../models/Employee")
-
+// http://localhost:3000/api/v1/employee/key/123456abcxyz
 routes.get("/", async(req, res)=>{
+    // let result = await Emp.find({}, "name gender");
     let result = await Emp.find();
     res.send(result);
 });
+
+
+routes.get("/key/:value", async(req, res)=>{
+    console.log(req.get('host'))
+    let a = req.params.value;
+    if(a=="123456abcxyz")
+    {
+        let result = await Emp.find();
+        res.send(result);
+    }
+    else{
+        let result = await Emp.find({}, "name gender");
+        res.send(result);
+    }
+})
+
 
 routes.get("/:id", async(req, res)=>{
     let id = req.params.id;
