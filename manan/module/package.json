@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ironsoftware/ironpdf": "^2024.9.1",
+    "pdf-creator-node": "^2.3.5",
+    "pdfkit": "^0.15.0"
+  }
+}

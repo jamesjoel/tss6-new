@@ -1,5 +1,11 @@
 let express = require("express");
 let app = express();
+let cors = require("cors");
+
+app.use(express.json());
+app.use(express.urlencoded({ extended : true }));
+app.use(cors());
+
 
 app.use(require("./routes/AllRoutes"))
 

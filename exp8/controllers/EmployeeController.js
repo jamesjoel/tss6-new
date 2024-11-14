@@ -36,8 +36,8 @@ routes.post("/", async(req, res)=>{
 
 routes.delete("/:id", async(req, res)=>{
     let x = req.params.id;
-    await Emp.deleteMany({_id : x});
-    res.send({success : true});
+    let result = await Emp.deleteMany({_id : x});
+    res.send({success : true, result});
 })
 
 routes.put("/:id", async(req, res)=>{

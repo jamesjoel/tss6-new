@@ -1,28 +1,44 @@
 let routes = require("express").Router();
-let mongoose = require("mongoose");
-mongoose.connect("mongodb://0.0.0.0:27017/tss6").then(()=>{ 
-    console.log("CONNECTED")
-})
-.catch(()=>{ 
-    
-    console.log("NOT CONNECTED")
- })
+let Student = require("../models/Student");
+let Teacher = require("../models/Teacher")
 
-
-let StuSchema = mongoose.Schema({
-    city : String,
-    name : String,
-    age : Number,
-    gender : String
-    
-})
-
-let Student = mongoose.model("student", StuSchema);
 
 
 routes.get("/", async(req, res)=>{
-    let data = await Student.find();
-    res.send(data);
+    let result = await Student.find();
+    res.send(result);
 })
 
+routes.post("/", async(req, res)=>{
+    await Student.create(req.body);
+    res.send({ success : true });
+})
+
+
+routes.delete("/:a", async(req, res)=>{
+    let x = req.params.a;
+    await Student.deleteMany({_id : x});
+    res.send({ success : true });
+})
+
+// routes.get("/:a/:b/:c", (req, res)=>{
+//     console.log(req.params);
+// })
+
 module.exports = routes;
+
+
+
+
+/*
+    [
+        {
+            student : [],
+            teacher : []
+        }
+    ]
+
+
+
+
+*/
