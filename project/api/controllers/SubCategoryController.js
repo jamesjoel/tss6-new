@@ -2,7 +2,7 @@ let routes = require("express").Router();
 let SubCate = require("../models/SubCategory");
 
 routes.get("/", async(req, res)=>{
-    let result = await SubCate.find();
+    let result = await SubCate.find().populate("categoryid").exec();
     res.send(result);
 })
 routes.get("/:id", async(req, res)=>{

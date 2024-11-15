@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { API_URL } from '../../../constants/API_URL'
 import { useFormik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import SubCateSchema from '../../../schemas/SubCategorySchema'
 
 
 const AddSubCategory = () => {
-
+  let navigate = useNavigate();
   let [cate, setCate] = useState([]);
 
   useEffect(()=>{
@@ -23,8 +24,15 @@ const AddSubCategory = () => {
       name : "",
       categoryid :  ""
     },
-    onSubmit : (formData)=>{
-      console.log(formData)
+    onSubmit : async(formData)=>{
+      // axios.post(`${API_URL}/subcategory`, formData)
+      // .then(response=>{
+        
+      //   navigate("/admin/subcategory/view")
+      // })
+
+      await axios.post(`${API_URL}/subcategory`, formData)
+      navigate("/admin/subcategory/view");
     }
   })
 

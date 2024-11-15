@@ -4,6 +4,7 @@ import IsLoggedIn from './IsLoggedIn'
 import IsNotLoggedIn from './IsNotLoggedIn'
 import axios from 'axios'
 import {API_URL} from '../../constants/API_URL'
+import './Header.css'
 
 const Header = () => {
    let [cate, setCate] = useState([]);
@@ -26,10 +27,51 @@ const Header = () => {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarSupportedContent">
                      <ul className="navbar-nav">
-                        <li className="nav-item">
+                     <li className="nav-item">
                            <NavLink className="nav-link" to="/">Home</NavLink>
                         </li>
-                       <li className="nav-item dropdown">
+                     
+
+                        {/* Multi-Level DD Start */}
+                        <li className="nav-item dropdown">
+                        <a role="button" data-toggle="dropdown" className="nav-link dropdown-toggle" data-target="#" href="/page.html">
+                           Category
+                        </a>
+    		               <ul className="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+             
+             
+                           <li className="divider"></li>
+                           <li className="dropdown-submenu">
+                              {
+                                 cate.map(item=><><a tabindex="-1" href="#">{item.name}</a>
+                                    <ul className="dropdown-menu">
+                                       <li><a tabindex="-1" href="#">Second level</a></li>
+                                       
+                                       <li><a href="#">Second level</a></li>
+                                       <li><a href="#">Second level</a></li>
+                                    </ul>
+                                    </>
+                                    )
+                              }
+                           </li>
+                        </ul>
+                     </li>
+
+                        {/* Multi-Level DD End */}
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                       {/* <li className="nav-item dropdown">
                            <a className="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span className="nav-label">Categories <span className="caret"></span></span></a>
                            <ul className="dropdown-menu">
                               {
@@ -38,12 +80,9 @@ const Header = () => {
                               
                               
                            </ul>
-                        </li>
+                        </li> */}
                         <li className="nav-item">
                            <NavLink className="nav-link" to="/products">Products</NavLink>
-                        </li>
-                        <li className="nav-item">
-                           <NavLink className="nav-link" to="/about">About</NavLink>
                         </li>
                         
                         
