@@ -6,5 +6,10 @@ routes.use("/api/v1/auth", require("../controllers/AuthController"));
 routes.use("/api/v1/users", require("../controllers/UsersController"));
 routes.use("/api/v1/category", require("../controllers/CategoryController"));
 routes.use("/api/v1/subcategory", require("../controllers/SubCategoryController"));
+routes.use("/api/v1/adminauth", require("../controllers/AdminAuthController"));
+
+routes.get("*", (req, res)=>{
+    res.status(400).json({ message : "This URL not Found"})
+})
 
 module.exports = routes;

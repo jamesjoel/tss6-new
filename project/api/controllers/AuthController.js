@@ -2,6 +2,7 @@ let routes = require("express").Router();
 let User = require("../models/User");
 let sha1 = require("sha1")
 let jwt = require("jsonwebtoken");
+const KEY = require("../config/JWTAccessKey");
 
 routes.post("/", async(req, res)=>{
     let e = req.body.email; // rohit@gmail.com
@@ -12,7 +13,7 @@ routes.post("/", async(req, res)=>{
         if(result[0].password == sha1(p))
         {
             let userobj = { id : result[0]._id, email : result[0].email }
-            let token = jwt.sign(userobj, "TSS");
+            let token = jwt.sign(userobj, KEY);
             res.send({success:true, token : token, name : result[0].name });
         }
         else{
