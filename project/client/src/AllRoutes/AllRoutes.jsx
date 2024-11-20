@@ -22,6 +22,8 @@ import AddCategory from '../pages/admin/category/AddCategory'
 import ViewCategory from '../pages/admin/category/ViewCategory'
 import ViewSubCategory from '../pages/admin/subcategory/ViewSubCategory'
 import AddSubCategory from '../pages/admin/subcategory/AddSubCategory'
+import AdminLogout from '../pages/admin/Logout'
+
 const AllRoutes = () => {
   return (
     <Routes>
@@ -44,14 +46,19 @@ const AllRoutes = () => {
 
         <Route path='admin' element={<AdminModule />}>
             <Route path='' element={<AdminLogin />} />
-            <Route path='dashboard' element={<Dashboard />} />
-            <Route path='users' element={<Users />} />
-            <Route path='category/add' element={<AddCategory />} />
-            <Route path='category/view' element={<ViewCategory />} />
-            <Route path='subcategory/view' element={<ViewSubCategory />} />
-            <Route path='subcategory/add' element={<AddSubCategory />} />
             
-            <Route path='setting' element={<Setting />} />
+            <Route path='' element={<AdminProtactedRoutes />}>
+            
+              <Route path='dashboard' element={<Dashboard />} />
+              <Route path='users' element={<Users />} />
+              <Route path='category/add' element={<AddCategory />} />
+              <Route path='category/view' element={<ViewCategory />} />
+              <Route path='subcategory/view' element={<ViewSubCategory />} />
+              <Route path='subcategory/add' element={<AddSubCategory />} />
+              <Route path='setting' element={<Setting />} />
+              <Route path='logout' element={<AdminLogout />} />
+            </Route>
+
         </Route>
 
     </Routes>
@@ -82,5 +89,21 @@ let UserProtectedRoute = ()=>{
     </>
   )
 }
+
+const AdminProtactedRoutes = ()=>{
+  let navigate = useNavigate();
+
+  useEffect(()=>{
+
+    if(! localStorage.getItem("access-admin")){
+      navigate("/");
+    }
+
+  },[])
+  return(
+    <Outlet />
+  )
+}
+
 
 // http://localhost:5173/admin/category/add

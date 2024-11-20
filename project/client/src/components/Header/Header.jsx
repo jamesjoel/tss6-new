@@ -10,7 +10,7 @@ const Header = () => {
    let [cate, setCate] = useState([]);
 
    useEffect(()=>{
-      axios.get(`${API_URL}/category`)
+      axios.get(`${API_URL}/category/allcategory`)
       .then(response=>{
          setCate(response.data);
       })
@@ -43,12 +43,19 @@ const Header = () => {
                            <li className="divider"></li>
                            <li className="dropdown-submenu">
                               {
-                                 cate.map(item=><><a tabindex="-1" href="#">{item.name}</a>
+                                 cate.map((item, index)=><><a tabindex="-1" href="#">{item.catename}</a>
                                     <ul className="dropdown-menu">
-                                       <li><a tabindex="-1" href="#">Second level</a></li>
                                        
-                                       <li><a href="#">Second level</a></li>
-                                       <li><a href="#">Second level</a></li>
+                                       {
+                                          index==1 ? 
+                                          <>
+                                          <li><a href="#">Second level</a></li>
+                                          <li><a href="#">Second level</a></li>
+                                          </>
+                                          :
+                                          <li><a href="#">hello</a></li>
+
+                                       }
                                     </ul>
                                     </>
                                     )

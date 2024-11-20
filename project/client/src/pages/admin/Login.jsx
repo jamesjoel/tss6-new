@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import {useFormik} from 'formik'
+import {useNavigate} from 'react-router-dom'
+
 import axios from 'axios'
 import {API_URL} from '../../constants/API_URL'
 
 const Login = () => {
+    let navigate = useNavigate();
     let [errMsg, setErrMsg] = useState("");
 
     let loginFrm = useFormik({
@@ -15,7 +18,9 @@ const Login = () => {
             try{
 
                 let response = await axios.post(`${API_URL}/adminauth`, formData);
-                console.log(response.data);
+                let token = response.data.token;
+                localStorage.setItem("access-admin", token);
+                navigate("/admin/dashboard");
             }catch(err){
                 
                 if(err.status==401){

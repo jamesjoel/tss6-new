@@ -10,7 +10,10 @@ const Header = () => {
   
         <div className="menu-list">
   
-            <ul id="menu-content" className="menu-content collapse out">
+            {
+              localStorage.getItem("access-admin")
+              ?
+              <ul id="menu-content" className="menu-content collapse out">
                 <li>
                   <NavLink to="/admin/dashboard">
                   <i className="fa fa-dashboard fa-lg"></i> Dashboard
@@ -47,11 +50,19 @@ const Header = () => {
                     <li><NavLink to="/admin/subcategory/view">View</NavLink></li>
                     
                 </ul>
+                <li>
+                  <NavLink to="/admin/logout">
+                  <i className="fa fa-lock fa-lg"></i> Logout
+                  </NavLink>
+                </li>
 
 
                
 
             </ul>
+            :
+            ''
+            }
      </div>
     </div>
   )
