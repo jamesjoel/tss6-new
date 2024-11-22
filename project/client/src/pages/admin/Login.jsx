@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {useFormik} from 'formik'
 import {useNavigate} from 'react-router-dom'
 
@@ -6,7 +6,14 @@ import axios from 'axios'
 import {API_URL} from '../../constants/API_URL'
 
 const Login = () => {
+    
     let navigate = useNavigate();
+    useEffect(()=>{
+        if(localStorage.getItem("access-admin")){
+            navigate("/admin/dashboard");
+        }
+    },[])
+
     let [errMsg, setErrMsg] = useState("");
 
     let loginFrm = useFormik({
