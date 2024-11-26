@@ -1,9 +1,13 @@
 import React from 'react'
 import './MyCart.module.css';
+import TopBar from '../components/TopBar';
 
 const MyCart = () => {
     let a = "rohit";
+    let PageName = "My Cart";
   return (
+    <>
+    <TopBar PageName={PageName} />
     <div className="container my-4" style={{minHeight : "700px"}}>
         <div className="row">
             
@@ -83,6 +87,7 @@ const MyCart = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 

@@ -50,6 +50,15 @@ const Header = () => {
                     <li><NavLink to="/admin/subcategory/view">View</NavLink></li>
                     
                 </ul>
+                <li  data-toggle="collapse" data-target="#pro" className="collapsed active">
+                  <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Product <span className="arrow"></span></a>
+                </li>
+                <ul className="sub-menu collapse" id="pro">
+                    
+                    <li><NavLink to="/admin/product/add">Add</NavLink></li>
+                    <li><NavLink to="/admin/product/view">View</NavLink></li>
+                    
+                </ul>
                 <li>
                   <NavLink to="/admin/logout">
                   <i className="fa fa-lock fa-lg"></i> Logout

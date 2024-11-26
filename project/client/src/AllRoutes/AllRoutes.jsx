@@ -23,6 +23,8 @@ import ViewCategory from '../pages/admin/category/ViewCategory'
 import ViewSubCategory from '../pages/admin/subcategory/ViewSubCategory'
 import AddSubCategory from '../pages/admin/subcategory/AddSubCategory'
 import AdminLogout from '../pages/admin/Logout'
+import ViewProduct from '../pages/admin/product/ViewProduct'
+import AddProduct from '../pages/admin/product/AddProduct'
 
 const AllRoutes = () => {
   return (
@@ -55,6 +57,9 @@ const AllRoutes = () => {
               <Route path='category/view' element={<ViewCategory />} />
               <Route path='subcategory/view' element={<ViewSubCategory />} />
               <Route path='subcategory/add' element={<AddSubCategory />} />
+
+              <Route path='product/view' element={<ViewProduct />} />
+              <Route path='product/add' element={<AddProduct />} />
               <Route path='setting' element={<Setting />} />
               <Route path='logout' element={<AdminLogout />} />
             </Route>

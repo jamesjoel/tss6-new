@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import {API_URL} from '../../../constants/API_URL'
+import DeleteButton from '../../../components/admin/DeleteButton'
+import DeleteComponent from '../../../components/admin/DeleteComponent'
 
 const ViewSubCategory = () => {
 
-  let [subCate, setSubCate] = useState([])
+  let [allSubCate, setAllSubCate] = useState([])
+  let [subCate, setSubCate] = useState({});
 
   // useEffect(()=>{
   //   axios.get(`${API_URL}/subcategory`)
@@ -20,13 +23,24 @@ const ViewSubCategory = () => {
 
   let getSubCate = async ()=>{
     let response = await axios.get(`${API_URL}/subcategory`);
-    setSubCate(response.data);
+    setAllSubCate(response.data);
   }
   
+  let askDeleteHandler = (obj)=>{
+    // console.log(obj)
+    setSubCate(obj);
+  }
 
 
+  let confDeleteHander = async()=>{
+    let response = await axios.delete(`${API_URL}/subcategory/${subCate._id}`);
+    setAllSubCate(()=>{
+      return allSubCate.filter(item=> item._id != subCate._id);
+    })
+  }
 
   return (
+    <>
     <div className="container my-4">
         <div className="row">
             <div className="col-md-12">
@@ -37,14 +51,18 @@ const ViewSubCategory = () => {
                             <th>S.No.</th>
                             <th>Category Name</th>
                             <th>Sub-Category Name</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                       {
-                        subCate.map((item, index)=><tr>
+                        allSubCate.map((item, index)=><tr>
                           <td>{index+1}</td>
                           <td>{item.categoryid.name}</td>
                           <td>{item.name}</td>
+                          <td>
+                            <DeleteButton onClick={askDeleteHandler} item={item}/>
+                          </td>
                         </tr>)
                       }
                     </tbody>
@@ -52,6 +70,10 @@ const ViewSubCategory = () => {
             </div>
         </div>
       </div>
+
+      <DeleteComponent title="Sub-Category" name={subCate.name} confDeleteHander={confDeleteHander} />
+    </>
+
   )
 }
 

@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import { API_URL } from '../../../constants/API_URL'
+import DeleteComponent from '../../../components/admin/DeleteComponent';
+import DeleteButton from '../../../components/admin/DeleteButton';
 
 const ViewCategory = () => {
     let [allCate, setAllCate] = useState([]);
@@ -40,10 +42,13 @@ const ViewCategory = () => {
                     </thead>
                     <tbody>
                         {
-                            allCate.map((item, index)=><tr>
+                            allCate.map((item, index)=><tr key={item._id}>
                                 <td>{index+1}</td>
                                 <td>{item.name}</td>
-                                <td><button onClick={()=>askDeleteHandler(item)} data-toggle="modal" data-target="#delModal" className='btn btn-danger btn-sm'><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                                <td>
+                                    {/* <button onClick={()=>askDeleteHandler(item)} data-toggle="modal" data-target="#delModal" className='btn btn-danger btn-sm'><i class="fa fa-trash" aria-hidden="true"></i></button> */}
+                                    <DeleteButton onClick={askDeleteHandler} item={item}/>
+                                </td>
                             </tr>)
                         }
                     </tbody>
@@ -51,8 +56,9 @@ const ViewCategory = () => {
             </div>
         </div>
     </div>
+    <DeleteComponent title={'Category'} name={cate.name} confDeleteHander={confDeleteHandler}  />
     
-    <div className="modal fade" id="delModal" aria-hidden="true">
+    {/* <div className="modal fade" id="delModal" aria-hidden="true">
         <div className="modal-dialog">
             <div className="modal-content">
                 <div className="modal-header">
@@ -67,7 +73,7 @@ const ViewCategory = () => {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
 
 
 
@@ -76,3 +82,27 @@ const ViewCategory = () => {
 }
 
 export default ViewCategory
+
+
+/*
+npm install <module>
+
+
+
+npm i create-react-app
+
+
+create-react-app <folder>
+
+
+npm i
+
+
+
+npm i @angular/cli -- v13
+
+ng new <folder>
+
+
+
+*/

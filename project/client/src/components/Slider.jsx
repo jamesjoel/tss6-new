@@ -1,99 +1,55 @@
 import React from 'react'
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const Slider = () => {
+
+   let data = [
+      {
+         title : "Up-Comming Sale",
+         img : "public/assets/images/arrival-bg.jpg"
+      },
+      {
+         title : "Diwali Dhamaka",
+         img : "public/assets/images/slider-bg.jpg"
+      },
+      {
+         title : "Black Friday Sale",
+         img : "public/assets/images/slider-bg2.jpg"
+      },
+      {
+         title : "Welcome",
+         img : "public/assets/images/slider-bg3.jpg"
+      },
+      {
+         title : "Latest Mobile",
+         img : "public/assets/images/slider-bg4.jpg"
+      }
+   ]
+
+
   return (
-    <section className="slider_section ">
-            <div className="slider_bg_box">
-               <img src="/public/assets/images/slider-bg.jpg" alt="" />
-            </div>
-            <div id="customCarousel1" className="carousel slide" data-ride="carousel">
-               <div className="carousel-inner">
-                  <div className="carousel-item active">
-                     <div className="container ">
-                        <div className="row">
-                           <div className="col-md-7 col-lg-6 ">
-                              <div className="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br />
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div className="btn-box">
-                                    <a href="" className="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div className="carousel-item ">
-                     <div className="container ">
-                        <div className="row">
-                           <div className="col-md-7 col-lg-6 ">
-                              <div className="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br />
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div className="btn-box">
-                                    <a href="" className="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div className="carousel-item">
-                     <div className="container ">
-                        <div className="row">
-                           <div className="col-md-7 col-lg-6 ">
-                              <div className="detail-box">
-                                 <h1>
-                                    <span>
-                                    Sale 20% Off
-                                    </span>
-                                    <br />
-                                    On Everything
-                                 </h1>
-                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
-                                 <div className="btn-box">
-                                    <a href="" className="btn1">
-                                    Shop Now
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div className="container">
-                  <ol className="carousel-indicators">
-                     <li data-target="#customCarousel1" data-slide-to="0" className="active"></li>
-                     <li data-target="#customCarousel1" data-slide-to="1"></li>
-                     <li data-target="#customCarousel1" data-slide-to="2"></li>
-                  </ol>
-               </div>
-            </div>
-         </section>
+   <div>
+      <Carousel height={200} dynamicHeight={false} showThumbs={false}>
+         {
+            data.map(item=><InnerSliderBox slide={item} />)
+         }
+              
+
+      </Carousel>
+   </div>
   )
 }
 
 export default Slider
+
+
+let InnerSliderBox = (props)=>{
+   return(
+      <div>
+                    <img style={{height : "400px"}} src={props.slide.img} />
+                    <p className="legend">{props.slide.title}</p>
+                </div>
+   )
+}
