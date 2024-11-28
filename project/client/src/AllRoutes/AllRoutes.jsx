@@ -25,6 +25,7 @@ import AddSubCategory from '../pages/admin/subcategory/AddSubCategory'
 import AdminLogout from '../pages/admin/Logout'
 import ViewProduct from '../pages/admin/product/ViewProduct'
 import AddProduct from '../pages/admin/product/AddProduct'
+import UpdateProfile from '../pages/user/UpdateProfile'
 
 const AllRoutes = () => {
   return (
@@ -41,6 +42,8 @@ const AllRoutes = () => {
                 <Route path='myprofile' element={<MyProfile />} />
                 <Route path='settings' element={<Settings />} />
                 <Route path='myorder' element={<MyOrder />} />
+                <Route path='update' element={<UpdateProfile />} />
+
                 <Route path='logout' element={<Logout />} />
             </Route>
         </Route>

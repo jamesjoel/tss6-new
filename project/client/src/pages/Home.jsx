@@ -4,19 +4,21 @@ import ShopWithUs from '../components/ShopWithUs'
 import ProductBox from '../components/ProductBox'
 import TopBar from '../components/TopBar'
 import axios from 'axios'
+import {API_URL} from '../constants/API_URL'
 
 const Home = () => {
 
-   let [allProduct, setAllProduct] = useState([]);
-
+   let [allPro, setAllPro] = useState([]);
    useEffect(()=>{
-      getData();
+      getAllPro();
    },[])
 
-
-   let getData = async()=>{
-      let response = await axios.get("https://fakestoreapi.com/products");
-      setAllProduct(response.data);
+   let getAllPro = async()=>{
+      let response = await axios.get(`${API_URL}/product`, {
+         headers : { Authorization : "rohit" }
+      });
+      
+      setAllPro(response.data);
    }
 
    
@@ -24,7 +26,7 @@ const Home = () => {
 
   return (
    <>
-   <Slider />
+   {/* <Slider /> */}
    <TopBar PageName={PageName} />
     <section className="product_section layout_padding">
          <div className="container">
@@ -35,7 +37,7 @@ const Home = () => {
             </div>
             <div className="row">
                {
-                  allProduct.map(item=><ProductBox info={item} />)
+                  allPro.map(item=><ProductBox pro={item} key={item._id} />)
                }
                
                
