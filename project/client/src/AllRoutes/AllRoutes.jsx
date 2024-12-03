@@ -56,10 +56,18 @@ const AllRoutes = () => {
             
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='users' element={<Users />} />
+              
+              
               <Route path='category/add' element={<AddCategory />} />
               <Route path='category/view' element={<ViewCategory />} />
+              {/* localhost:5173/admin/category/edit/76 */}
+              <Route path='category/edit/:a' element={<AddCategory />} />
+
+
+
               <Route path='subcategory/view' element={<ViewSubCategory />} />
               <Route path='subcategory/add' element={<AddSubCategory />} />
+              <Route path='subcategory/edit/:id' element={<AddSubCategory />} />
 
               <Route path='product/view' element={<ViewProduct />} />
               <Route path='product/add' element={<AddProduct />} />

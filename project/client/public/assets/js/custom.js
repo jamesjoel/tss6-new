@@ -18,8 +18,8 @@ $(".client_owl-carousel").owlCarousel({
     autoplay: true,
     autoplayHoverPause: true,
     navText: [
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        '<i className="fa fa-angle-left" aria-hidden="true"></i>',
+        '<i className="fa fa-angle-right" aria-hidden="true"></i>'
     ],
     responsive: {
         0: {

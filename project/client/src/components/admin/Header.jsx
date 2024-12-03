@@ -21,7 +21,7 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink to="/admin/users">
-                  <i class="fa fa-users" aria-hidden="true"></i> Users
+                  <i className="fa fa-users" aria-hidden="true"></i> Users
                   </NavLink>
                 </li>
                 <li>
@@ -31,7 +31,7 @@ const Header = () => {
                 </li>
 
                 <li  data-toggle="collapse" data-target="#cate" className="collapsed active">
-                  <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Category <span className="arrow"></span></a>
+                  <a href="#"><i className="fa fa-list" aria-hidden="true"></i> Category <span className="arrow"></span></a>
                 </li>
                 <ul className="sub-menu collapse" id="cate">
                     
@@ -42,7 +42,7 @@ const Header = () => {
 
 
                 <li  data-toggle="collapse" data-target="#subcate" className="collapsed active">
-                  <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Sub-Category <span className="arrow"></span></a>
+                  <a href="#"><i className="fa fa-list" aria-hidden="true"></i> Sub-Category <span className="arrow"></span></a>
                 </li>
                 <ul className="sub-menu collapse" id="subcate">
                     
@@ -51,7 +51,7 @@ const Header = () => {
                     
                 </ul>
                 <li  data-toggle="collapse" data-target="#pro" className="collapsed active">
-                  <a href="#"><i class="fa fa-list" aria-hidden="true"></i> Product <span className="arrow"></span></a>
+                  <a href="#"><i className="fa fa-list" aria-hidden="true"></i> Product <span className="arrow"></span></a>
                 </li>
                 <ul className="sub-menu collapse" id="pro">
                     

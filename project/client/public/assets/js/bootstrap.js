@@ -250,7 +250,7 @@
     SHOW: 'show'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -418,7 +418,7 @@
     FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1)
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -625,7 +625,7 @@
     PEN: 'pen'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -1185,7 +1185,7 @@
     DATA_TOGGLE: '[data-toggle="collapse"]'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -1580,7 +1580,7 @@
     display: 'string'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -2085,7 +2085,7 @@
     STICKY_CONTENT: '.sticky-top'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -2621,7 +2621,7 @@
   var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
   var DefaultWhitelist = {
     // Global attributes allowed on any supplied element below.
-    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
+    '*': ['className', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
     a: ['target', 'href', 'title', 'rel'],
     area: [],
     b: [],
@@ -2772,7 +2772,7 @@
   };
   var Default$4 = {
     animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
+    template: '<div className="tooltip" role="tooltip">' + '<div className="arrow"></div>' + '<div className="tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
     delay: 0,
@@ -2819,7 +2819,7 @@
     MANUAL: 'manual'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -3338,7 +3338,7 @@
 
       _proto._cleanTipClass = function _cleanTipClass() {
         var $tip = $(this.getTipElement());
-        var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+        var tabClass = $tip.attr('className').match(BSCLS_PREFIX_REGEX);
 
         if (tabClass !== null && tabClass.length) {
           $tip.removeClass(tabClass.join(''));
@@ -3467,7 +3467,7 @@
     placement: 'right',
     trigger: 'click',
     content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
+    template: '<div className="popover" role="tooltip">' + '<div className="arrow"></div>' + '<h3 className="popover-header"></h3>' + '<div className="popover-body"></div></div>'
   });
 
   var DefaultType$5 = _objectSpread({}, Tooltip.DefaultType, {
@@ -3495,7 +3495,7 @@
     MOUSELEAVE: "mouseleave" + EVENT_KEY$7
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -3548,7 +3548,7 @@
 
       _proto._cleanTipClass = function _cleanTipClass() {
         var $tip = $(this.getTipElement());
-        var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
+        var tabClass = $tip.attr('className').match(BSCLS_PREFIX_REGEX$1);
 
         if (tabClass !== null && tabClass.length > 0) {
           $tip.removeClass(tabClass.join(''));
@@ -3684,7 +3684,7 @@
     POSITION: 'position'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -3979,7 +3979,7 @@
     DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 
@@ -4216,7 +4216,7 @@
     DATA_DISMISS: '[data-dismiss="toast"]'
     /**
      * ------------------------------------------------------------------------
-     * Class Definition
+     * className Definition
      * ------------------------------------------------------------------------
      */
 

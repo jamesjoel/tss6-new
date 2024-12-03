@@ -3,6 +3,7 @@ import axios from 'axios'
 import {API_URL} from '../../../constants/API_URL'
 import DeleteButton from '../../../components/admin/DeleteButton'
 import DeleteComponent from '../../../components/admin/DeleteComponent'
+import { NavLink } from 'react-router-dom'
 
 const ViewSubCategory = () => {
 
@@ -52,6 +53,7 @@ const ViewSubCategory = () => {
                             <th>Category Name</th>
                             <th>Sub-Category Name</th>
                             <th>Delete</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,6 +64,11 @@ const ViewSubCategory = () => {
                           <td>{item.name}</td>
                           <td>
                             <DeleteButton onClick={askDeleteHandler} item={item}/>
+                          </td>
+                          <td>
+                            <NavLink to={'/admin/subcategory/edit/'+item._id} className='btn btn-sm btn-info'>
+                            <i className='fa fa-pencil-square-o'></i>
+                            </NavLink>
                           </td>
                         </tr>)
                       }

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { API_URL } from '../../../constants/API_URL'
 import DeleteComponent from '../../../components/admin/DeleteComponent';
 import DeleteButton from '../../../components/admin/DeleteButton';
+import { NavLink } from 'react-router-dom';
 
 const ViewCategory = () => {
     let [allCate, setAllCate] = useState([]);
@@ -38,6 +39,7 @@ const ViewCategory = () => {
                             <th>S.No.</th>
                             <th>Category Name</th>
                             <th>Delete</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,8 +48,13 @@ const ViewCategory = () => {
                                 <td>{index+1}</td>
                                 <td>{item.name}</td>
                                 <td>
-                                    {/* <button onClick={()=>askDeleteHandler(item)} data-toggle="modal" data-target="#delModal" className='btn btn-danger btn-sm'><i class="fa fa-trash" aria-hidden="true"></i></button> */}
+                                    {/* <button onClick={()=>askDeleteHandler(item)} data-toggle="modal" data-target="#delModal" className='btn btn-danger btn-sm'><i className="fa fa-trash" aria-hidden="true"></i></button> */}
                                     <DeleteButton onClick={askDeleteHandler} item={item}/>
+                                </td>
+                                <td>
+                                    <NavLink to={'/admin/category/edit/'+item._id} className='btn btn-info btn-sm'>
+                                        <i className='fa fa-pencil-square-o'></i>
+                                    </NavLink>
                                 </td>
                             </tr>)
                         }
