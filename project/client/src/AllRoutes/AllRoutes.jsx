@@ -26,6 +26,7 @@ import AdminLogout from '../pages/admin/Logout'
 import ViewProduct from '../pages/admin/product/ViewProduct'
 import AddProduct from '../pages/admin/product/AddProduct'
 import UpdateProfile from '../pages/user/UpdateProfile'
+import ChangePass from '../pages/user/ChangePass'
 
 const AllRoutes = () => {
   return (
@@ -40,6 +41,7 @@ const AllRoutes = () => {
             <Route path='mycart' element={<MyCart />} />        
             <Route path='' element={<UserProtectedRoute />}>
                 <Route path='myprofile' element={<MyProfile />} />
+                <Route path='changepass' element={<ChangePass />} />
                 <Route path='settings' element={<Settings />} />
                 <Route path='myorder' element={<MyOrder />} />
                 <Route path='update' element={<UpdateProfile />} />
@@ -56,10 +58,18 @@ const AllRoutes = () => {
             
               <Route path='dashboard' element={<Dashboard />} />
               <Route path='users' element={<Users />} />
+              
+              
               <Route path='category/add' element={<AddCategory />} />
               <Route path='category/view' element={<ViewCategory />} />
+              {/* localhost:5173/admin/category/edit/76 */}
+              <Route path='category/edit/:a' element={<AddCategory />} />
+
+
+
               <Route path='subcategory/view' element={<ViewSubCategory />} />
               <Route path='subcategory/add' element={<AddSubCategory />} />
+              <Route path='subcategory/edit/:id' element={<AddSubCategory />} />
 
               <Route path='product/view' element={<ViewProduct />} />
               <Route path='product/add' element={<AddProduct />} />

@@ -11,6 +11,26 @@ const Users = () => {
         })
     },[])
 
+    let changeStatus = async(obj)=>{
+        let response = await axios.put(`${API_URL}/users/changestatus/${obj._id}/${obj.status}`);
+        console.log(response.data);
+        let x = obj.status == true ? false : true;
+        let id = obj._id;
+
+        setUsers(()=>{
+            let arr = users.map(item=>{
+                if(item._id == id){
+                    item.status = x;
+                    return item;
+                }else{
+                    return item;
+                }
+                
+            });
+
+            return arr;
+        })
+    }
 
   return (
     <div className="container my-4">
@@ -24,15 +44,21 @@ const Users = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Contact</th>
+                            <th>Status</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map((item, index)=><tr>
+                            users.map((item, index)=><tr key={item._id}>
                                 <td>{index+1}</td>
                                 <td>{item.name}</td>
                                 <td>{item.email}</td>
                                 <td>{item.contact}</td>
+                                <td>
+                                   <button onClick={()=>changeStatus(item)} className={'btn btn-sm ' + (item.status ? 'btn-danger' : 'btn-success')}>{item.status ? 'Deactive' : 'Active'}</button>
+                                </td>
+                                
                             </tr>)
                         }
                     </tbody>

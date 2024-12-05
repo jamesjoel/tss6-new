@@ -27,6 +27,7 @@ const MyProfile = () => {
             <div className="col-md-12">
                 <h2>Your Profile</h2>
                 <NavLink to="/update" className="text-info">Update Profile</NavLink>
+                <NavLink to="/changepass" className="text-info">Change Password</NavLink>
                 {
                   user
                   ?
