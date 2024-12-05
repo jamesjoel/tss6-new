@@ -36,7 +36,11 @@ const Login = () => {
             setErrMsg("This Password is Incorrect !")
           }
           if(response.data.errType == 3){
-            setErrMsg("You are deactivat now ....")
+
+            
+
+            setErrMsg("You are Deactive now.... Please Contact our Support Team !")
+
           }
         }
       })
