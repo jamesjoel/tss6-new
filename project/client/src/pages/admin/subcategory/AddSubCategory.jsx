@@ -16,11 +16,14 @@ const AddSubCategory = () => {
   })
 
   useEffect(()=>{
-    axios.get(`${API_URL}/subcategory/${param.id}`)
-    .then(response=>{
-      setSubCate(response.data[0])
-    })
-  },[])
+    if(param.id){
+
+      axios.get(`${API_URL}/subcategory/${param.id}`)
+      .then(response=>{
+        setSubCate(response.data[0])
+      })
+    }
+  },[param])
 
   useEffect(()=>{
     axios.get(`${API_URL}/category`)

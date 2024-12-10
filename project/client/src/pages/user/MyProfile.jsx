@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {NavLink, useNavigate} from 'react-router-dom'
-import axios from 'axios'
-import {API_URL} from '../../constants/API_URL'
+import { getUserProfile } from '../../services/UserService'
+// import axios from 'axios'
+// import {API_URL} from '../../constants/API_URL'
+
 
 // localhost:3000/api/v1/user/profile
 const MyProfile = () => {
@@ -12,11 +14,9 @@ const MyProfile = () => {
   },[])
 
   let getUser = async()=>{
-    let response = await axios.get(`${API_URL}/user/profile`, {
-      headers : { Authorization : localStorage.getItem("access-user") }
-    });
-    console.log(response.data);
-    setUser(response.data[0]);
+    // let response = getUserProfile();
+    // console.log(response.data);
+    setUser(await getUserProfile());
   }
     
 

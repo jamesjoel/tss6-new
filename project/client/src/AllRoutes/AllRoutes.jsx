@@ -27,6 +27,9 @@ import ViewProduct from '../pages/admin/product/ViewProduct'
 import AddProduct from '../pages/admin/product/AddProduct'
 import UpdateProfile from '../pages/user/UpdateProfile'
 import ChangePass from '../pages/user/ChangePass'
+import Detail from '../pages/product/Detail'
+import BuyNow from '../pages/product/BuyNow'
+import OrderSuccess from '../pages/product/OrderSuccess'
 
 const AllRoutes = () => {
   return (
@@ -38,8 +41,14 @@ const AllRoutes = () => {
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<Signup />} />
             <Route path='about' element={<About />} />
-            <Route path='mycart' element={<MyCart />} />        
+            <Route path='mycart' element={<MyCart />} />  
+              <Route path='detail/:id' element={<Detail />} />  
+
+
             <Route path='' element={<UserProtectedRoute />}>
+
+                <Route path='ordersuccess' element={<OrderSuccess />} />
+                <Route path='buynow/:id' element={<BuyNow />} />
                 <Route path='myprofile' element={<MyProfile />} />
                 <Route path='changepass' element={<ChangePass />} />
                 <Route path='settings' element={<Settings />} />

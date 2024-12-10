@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import { useFormik } from 'formik'
 import {useNavigate} from 'react-router-dom'
 import ProSchema from '../../../schemas/ProductSchema'
@@ -6,6 +6,7 @@ import axios from 'axios'
 import { API_URL } from '../../../constants/API_URL'
 
 const AddProduct = () => {
+    let file = useRef()
     let navigate = useNavigate();
     let [allCate, setAllCate] = useState([]);
     let [allSubCate, setAllSubCate] = useState([]);
@@ -19,7 +20,7 @@ const AddProduct = () => {
         setAllCate(response.data);
     }
     let proFrm = useFormik({
-        validationSchema : ProSchema,
+        // validationSchema : ProSchema,
         initialValues : {
             title : "",
             price : "",
@@ -27,12 +28,28 @@ const AddProduct = () => {
             discount : "",
             quantity : "",
             category : "",
-            subcategory : ""
+            subcategory : "",
+            image : ""
         },
         onSubmit : async(formData)=>{
             console.log(formData)
-            // return;
-            let response = await axios.post(`${API_URL}/product`, formData);
+            return;
+            // console.log(file.current.files[0])
+            // console.log(formData)
+            
+            let image = file.current.files[0];
+            let myForm = new FormData(); // create our own FORM Object
+            myForm.append("photo", image);
+            myForm.append("title", formData.title)
+            myForm.append("price", formData.price)
+            myForm.append("detail", formData.detail)
+            myForm.append("discount", formData.discount)
+            myForm.append("quantity", formData.quantity)
+            myForm.append("category", formData.category)
+            myForm.append("subcategory", formData.subcategory)
+
+            
+            let response = await axios.post(`${API_URL}/product`, myForm);
             navigate("/admin/product/view")
         }
     })
@@ -64,6 +81,19 @@ const AddProduct = () => {
                         <div className="my-2">
                             <label>Product Price</label>
                             <input name='price' onChange={proFrm.handleChange} type='text' className={'form-control '+(proFrm.errors.price && proFrm.touched.price ? 'is-invalid' : '')}/>
+                        </div>
+                        <div className="my-2">
+                            <label>Product Image</label>
+                            <input name='image' ref={file} onChange={(e)=>proFrm.handleChange(e.target.files[0])} type='file' className={'form-control '+(proFrm.errors.image && proFrm.touched.image ? 'is-invalid' : '')}/>
+                            <span className='text-danger'>
+                                {
+                                    proFrm.errors.image && proFrm.touched.image
+                                    ?
+                                    proFrm.errors.image
+                                    :
+                                    ''
+                                }
+                            </span>
                         </div>
                         <div className="my-2">
                             <label>Product Category</label>

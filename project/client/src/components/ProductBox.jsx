@@ -1,21 +1,20 @@
 import React from 'react'
-
+import { API_PATH } from '../constants/API_URL'
+import {NavLink} from 'react-router-dom'
 const ProductBox = ({pro}) => {
   return (
     <div className="col-sm-6 col-md-4 col-lg-4">
     <div className="box">
        <div className="option_container">
           <div className="options">
-             <a href="" className="option1">
-             Add To Cart
-             </a>
-             <a href="" className="option2">
-             Buy Now
-             </a>
+             <NavLink to={`/detail/${pro._id}`} className="option1">
+             Detail
+             </NavLink>
+             
           </div>
        </div>
        <div className="img-box">
-          <img src="" alt="" />
+          <img src={`${API_PATH}/${pro.image}`} alt="" />
        </div>
        <div className="detail-box">
           <h5>

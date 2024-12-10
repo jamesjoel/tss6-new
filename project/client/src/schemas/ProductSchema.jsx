@@ -8,6 +8,16 @@ let ProSchema = YUP.object({
     discount : YUP.string().required("Insert Product Discount"),
     detail : YUP.string().required("Insert Product Detail"),
     quantity : YUP.string().required("Insert Product Qunatity"),
+    image : YUP.string().test("check", "Select Image Only (.jpg|.jpeg|.png)", (value)=>{
+        // console.log(value)
+        let arr = value.split(".");
+        let ext = arr[arr.length-1];
+        if(ext=="jpg" || ext=="jpeg" || ext=="png"){
+            return true;
+        }else{
+            return false;
+        }
+    }).required("Select Product Image")
 })
 
 export default ProSchema;
