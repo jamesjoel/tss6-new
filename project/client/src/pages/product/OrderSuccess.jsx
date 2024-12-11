@@ -9,7 +9,7 @@ const OrderSuccess = () => {
             <h2 className='text-center'>
                 Your Order Has been successfuly placed ...
             </h2>
-            <NavLink to=''>View Order</NavLink>
+            <NavLink to='/view-order'>View Order</NavLink>
             </div>
         </div>
     </div>

@@ -30,6 +30,7 @@ import ChangePass from '../pages/user/ChangePass'
 import Detail from '../pages/product/Detail'
 import BuyNow from '../pages/product/BuyNow'
 import OrderSuccess from '../pages/product/OrderSuccess'
+import ViewOrder from '../pages/product/ViewOrder'
 
 const AllRoutes = () => {
   return (
@@ -47,6 +48,7 @@ const AllRoutes = () => {
 
             <Route path='' element={<UserProtectedRoute />}>
 
+                <Route path='view-order' element={<ViewOrder />} />
                 <Route path='ordersuccess' element={<OrderSuccess />} />
                 <Route path='buynow/:id' element={<BuyNow />} />
                 <Route path='myprofile' element={<MyProfile />} />
