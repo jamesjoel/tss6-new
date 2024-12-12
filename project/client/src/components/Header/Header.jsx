@@ -4,7 +4,8 @@ import IsLoggedIn from './IsLoggedIn'
 import IsNotLoggedIn from './IsNotLoggedIn'
 import axios from 'axios'
 import {API_URL} from '../../constants/API_URL'
-import './Header.css'
+// import './Header.css'
+// import Dropdown from 'react-bootstrap/Dropdown';
 
 const Header = () => {
    let [cate, setCate] = useState([]);
@@ -19,6 +20,11 @@ const Header = () => {
 
   return (
     <header className="header_section">
+      
+
+
+
+
             <div className="container">
                <nav className="navbar navbar-expand-lg custom_nav-container ">
                   <NavLink className="navbar-brand" to="/"><img width="250" src="/public/assets/images/logo.png" alt="#" /></NavLink>
