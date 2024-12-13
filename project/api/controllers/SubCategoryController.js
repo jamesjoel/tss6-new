@@ -5,6 +5,11 @@ routes.get("/", async(req, res)=>{
     let result = await SubCate.find().populate("categoryid").exec();
     res.send(result);
 })
+routes.get("/getsubcatebycateid/:id", async(req, res)=>{
+    let id = req.params.id;
+    let result = await SubCate.find({ categoryid : id }).populate("categoryid").exec();
+    res.send(result);
+})
 routes.get("/:id", async(req, res)=>{
     let id = req.params.id;
     let result = await SubCate.find({_id:id});

@@ -12,9 +12,15 @@ routes.post("/", async(req, res)=>{
     {
         if(result[0].password == sha1(p))
         {
-            let userobj = { id : result[0]._id, email : result[0].email }
-            let token = jwt.sign(userobj, KEY);
-            res.send({success:true, token : token, name : result[0].name });
+            if(result[0].status==true){
+
+                let userobj = { id : result[0]._id, email : result[0].email }
+                let token = jwt.sign(userobj, KEY);
+                res.send({success:true, token : token, name : result[0].name });
+            }else{
+
+                res.send({ success : false, errType : 3 })
+            }
         }
         else{
 

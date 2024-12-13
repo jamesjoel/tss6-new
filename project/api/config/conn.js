@@ -1,5 +1,5 @@
-const connection_string = "mongodb://0.0.0.0:27017/tss6_project"
-// const connection_string = "mongodb+srv://jamessteppingstone:Img4N6WutoEiiTkB@cluster0.ww9rq.mongodb.net/"
+// const connection_string = "mongodb://0.0.0.0:27017/tss6_project"
+const connection_string = "mongodb+srv://jamessteppingstone:Img4N6WutoEiiTkB@cluster0.ww9rq.mongodb.net/"
 
 
 

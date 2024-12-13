@@ -10,7 +10,8 @@ const UserSchema = mongoose.Schema({
     contact : String,
     gender : String,
     city : String,
-    state : String
+    state : String,
+    status : {type : Boolean, default : true}
 })
 
 module.exports = mongoose.model("user", UserSchema);
