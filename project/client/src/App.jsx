@@ -1,12 +1,29 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 
 import AllRoutes from './AllRoutes/AllRoutes'
-import Header from './components/Header/Header'
-import Footer from './components/Footer'
+// import Header from './components/Header/Header'
+// import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import UserModule from './modules/UserModule'
+import { useDispatch } from 'react-redux'
+import { loggedIn, loggedOut } from './redux/UserAuthSlice'
+
 const App = () => {
+  let disp = useDispatch();
+
+  useEffect(()=>{
+    if(localStorage.getItem("access-user")){
+      disp(loggedIn())
+    }else{
+      disp(loggedOut())
+
+    }
+  },[])
+
+  
   return (
     <>
-    
+   
     <AllRoutes />  
     
     </>

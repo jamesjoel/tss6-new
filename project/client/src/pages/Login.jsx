@@ -4,9 +4,12 @@ import {useFormik} from 'formik'
 import LoginSchema from '../schemas/LoginSchema'
 import axios from 'axios'
 import {API_URL} from '../constants/API_URL'
+import { useDispatch } from 'react-redux'
+import { loggedIn } from '../redux/UserAuthSlice'
 const Login = () => {
 
   let navigate = useNavigate();
+  let dispatch = useDispatch();
 
   let [errMsg, setErrMsg] = useState("");
 
@@ -25,8 +28,8 @@ const Login = () => {
           let name = response.data.name;
           localStorage.setItem("access-user", token);
           localStorage.setItem("name", name);
-
-          navigate("/myprofile");
+          dispatch(loggedIn());
+          navigate("/");
         }
         else{
           if(response.data.errType == 1){

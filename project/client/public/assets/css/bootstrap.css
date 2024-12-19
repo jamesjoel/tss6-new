@@ -600,7 +600,7 @@ pre code {
 }
 
 .no-gutters > .col,
-.no-gutters > [className*="col-"] {
+.no-gutters > [class*="col-"] {
   padding-right: 0;
   padding-left: 0;
 }
@@ -2013,7 +2013,7 @@ textarea.form-control {
 }
 
 .form-row > .col,
-.form-row > [className*="col-"] {
+.form-row > [class*="col-"] {
   padding-right: 5px;
   padding-left: 5px;
 }
@@ -3259,6 +3259,7 @@ input[type="button"].btn-block {
 
 .dropdown-menu.show {
   display: block;
+  
 }
 
 .dropdown-header {
@@ -4102,7 +4103,7 @@ input[type="button"].btn-block {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-color: #dee2e6 #dee2e6 #fff;
 }
 
@@ -4201,6 +4202,7 @@ input[type="button"].btn-block {
 .navbar-nav .dropdown-menu {
   position: static;
   float: none;
+  
 }
 
 .navbar-text {

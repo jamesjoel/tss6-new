@@ -63,7 +63,7 @@ const AllRoutes = () => {
 
 
         <Route path='admin' element={<AdminModule />}>
-            <Route path='' element={<AdminLogin />} />
+            {/* <Route path='' element={<AdminLogin />} />
             
             <Route path='' element={<AdminProtactedRoutes />}>
             
@@ -73,7 +73,7 @@ const AllRoutes = () => {
               
               <Route path='category/add' element={<AddCategory />} />
               <Route path='category/view' element={<ViewCategory />} />
-              {/* localhost:5173/admin/category/edit/76 */}
+              
               <Route path='category/edit/:a' element={<AddCategory />} />
 
 
@@ -86,7 +86,7 @@ const AllRoutes = () => {
               <Route path='product/add' element={<AddProduct />} />
               <Route path='setting' element={<Setting />} />
               <Route path='logout' element={<AdminLogout />} />
-            </Route>
+            </Route> */}
 
         </Route>
 

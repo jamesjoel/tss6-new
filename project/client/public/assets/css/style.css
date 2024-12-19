@@ -37,24 +37,24 @@ body {
 .bg-blue{
   background-color: #002C3E;
 }
+.btn-orange{
+  display: inline-block;
+    padding: 12px 45px;
+    background-color: #f7444e;
+    border: 1px solid #f7444e;
+    color: #ffffff;
+    border-radius: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 10px;
+    font-weight: 700;
+}
 
 h1,
 h2 {
   font-family: 'Playfair Display', serif;
 }
 
-
-.btn-orange{
-  
-    background: #f7444e;
-    color: #fff;
-    border: none;
-    top: 0px;
-    font-size: 14px;
-    height: 48px;
-    font-weight: 600;
-    padding: 0 15px;
-}
 .heading_container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -946,19 +946,21 @@ a:focus {
 }
 
 li.nav-item ul {
-    background: #fff;
-    border: solid #000 2px;
-    border-radius: 0;
-    padding: 10px 20px;
+    /* background: #fff; */
+    /* border: solid #000 2px; */
+    /* border-radius: 0; */
+    /* padding: 10px 20px; */
     margin-left: 10px;
+    border-width: 0px !important;
     margin-top: 10px;
-    box-shadow: 4px 4px 0px 0 #000;
+    padding: 0px !important;
+    /* box-shadow: 4px 4px 0px 0 #000; */
     width: 190px;
 }
 
 li.nav-item ul li {
     float: left;
-    width: 120%;
+    width: 100%;
     margin: 6px 0;
 }
 
@@ -972,7 +974,7 @@ li.nav-item ul li a {
 }
 
 li.nav-item ul li a:hover, li.nav-item ul li a:focus {
-    color: #f7444e;
+    /* color: #f7444e; */
 }
 
 .inner_page_head {
@@ -1077,7 +1079,7 @@ form input {
     width: 100%;
     font-size: 14px;
     margin-bottom: 20px;
-  
+    text-transform: capitalize;
     line-height: normal;
 }
 
@@ -1135,3 +1137,49 @@ form input[type="submit"]:focus {
     font-size: 15px;
     font-weight: 400;
 }
+
+/* ----------- dropdwon code start */
+.navbar-nav .dropdown-menu{
+  background-color: #002C3E;
+}
+.navbar-nav .dropdown-menu li a{
+  color: #fff !important;
+
+}
+.navbar-nav .dropdown-menu li a:hover{
+  color: #000 !important;
+
+}
+
+
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+
+}
+
+
+.dropdown-submenu:hover{
+  color: #000;
+}
+li.nav-item ul li:hover{
+  color: #000 !important;
+}
+  
+/* ----------- dropdwon code end */
+
+
+
+
+
+
+http://kute-themes.com/html/boutique/html/index.html
+https://template.hasthemes.com/noraure/noraure/index.html
+https://preview.hasthemes.com/xoss-preview/xoss/index.html
+

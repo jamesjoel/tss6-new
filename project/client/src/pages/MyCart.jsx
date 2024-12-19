@@ -1,85 +1,98 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './MyCart.module.css';
-import TopBar from '../components/TopBar';
+import { API_PATH } from '../constants/API_URL';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeOneItem } from '../redux/CartSlice';
 
 const MyCart = () => {
-    let a = "rohit";
-    let PageName = "My Cart";
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
+    let dispatch = useDispatch();
+    let cartData = useSelector(state=>state.CartSlice)
+    let totalPrice = 0;
+    let totalDiscount = 0;
+
+    let cartTable = cartData.map(item=>{
+        totalPrice += item.price;
+        let x = item.price*item.discount/100;
+        totalDiscount += x;
+        return(
+            <div className="row my-4" key={item._id}>
+                <div className="row main align-items-center">
+                    <div className="col-md-2"><img className="img-fluid img-thumbnail" src={`${API_PATH}/${item.image}`} /></div>
+                    <div className="col-md-4">
+                        <div className=" text-muted">{item.title}</div>
+                        <div className="">{item.category ? item.category.name : ''}</div>
+                    </div>
+                    <div className='col-md-1'>{item.discount}%</div>
+                    
+                    <div className="col-md-2"> {item.price}</div>
+                    <div className='col-md-2'>{ item.price-(item.price*item.discount/100)}</div>
+                    <div className='col-md-1'>
+                        <button className='btn btn-danger btn-sm' onClick={()=>dispatch(removeOneItem(item))}>X</button>
+                    </div>
+                </div>
+            </div>
+        )
+    })
+
+
+
   return (
     <>
-    <TopBar PageName={PageName} />
-    <div className="container my-4" style={{minHeight : "700px"}}>
+    {/* <TopBar PageName={PageName} /> */}
+    
+    <div className="container" style={{minHeight : "700px", marginTop : "200px"}}>
         <div className="row">
             
             <div className="col-md-12">
-            <div className="card">
+            <div className="card p-3">
             <div className="row">
                 <div className="col-md-8 cart">
                     <div className="title">
                         <div className="row">
                             <div className="col"><h4><b>Shopping Cart</b></h4></div>
-                            <div className="col align-self-center text-right text-muted">3 items</div>
+                            <div className="col align-self-center text-right text-muted">{cartData.length} items</div>
                         </div>
-                    </div>    
-                    <div className="row border-top border-bottom">
-                        <div className="row main align-items-center">
-                            <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/1GrakTl.jpg" /></div>
-                            <div className="col">
-                                <div className="row text-muted">Shirt</div>
-                                <div className="row">Cotton T-shirt</div>
-                            </div>
-                            <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
-                            </div>
-                            <div className="col">&euro; 44.00 <span className="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="row main align-items-center">
-                            <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/ba3tvGm.jpg" /></div>
-                            <div className="col">
-                                <div className="row text-muted">Shirt</div>
-                                <div className="row">Cotton T-shirt</div>
-                            </div>
-                            <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
-                            </div>
-                            <div className="col">&euro; 44.00 <span className="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div className="row border-top border-bottom">
-                        <div className="row main align-items-center">
-                            <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/pHQ3xT3.jpg" /></div>
-                            <div className="col">
-                                <div className="row text-muted">Shirt</div>
-                                <div className="row">Cotton T-shirt</div>
-                            </div>
-                            <div className="col">
-                                <a href="#">-</a><a href="#" className="border">1</a><a href="#">+</a>
-                            </div>
-                            <div className="col">&euro; 44.00 <span className="close">&#10005;</span></div>
-                        </div>
-                    </div>
-                    <div className="back-to-shop"><a href="#">&leftarrow;</a><span className="text-muted">Back to shop</span></div>
+                    </div>   
+
+                    {
+                        cartTable
+                    } 
+                    
+                    
+                    
                 </div>
-                <div className="col-md-4 summary">
+                <div className="col-md-3 offset-md-1">
                     <div><h5><b>Summary</b></h5></div>
                     <hr />
-                    <div className="row">
-                        <div className="col" style={{paddingLeft:"0"}}>ITEMS 3</div>
-                        <div className="col text-right">&euro; 132.00</div>
-                    </div>
-                    <form>
-                        <p>SHIPPING</p>
-                        <select><option className="text-muted">Standard-Delivery- &euro;5.00</option></select>
-                        <p>GIVE CODE</p>
-                        <input id="code" placeholder="Enter your code" />
-                    </form>
-                    <div className="row" style={{borderTop: "1px solid rgba(0,0,0,.1)", padding: "2vh 0"}}>
-                        <div className="col">TOTAL PRICE</div>
-                        <div className="col text-right">&euro; 137.00</div>
-                    </div>
-                    <button className="btn">CHECKOUT</button>
+                    
+                        <div className="" style={{paddingLeft:"0"}}>ITEMS {cartData.length}</div>
+                        <table style={{width : "100%"}} className='mt-4'>
+                            <tbody>
+                                <tr>
+                                    <td>Total Price</td>
+                                    <td align='right'>{totalPrice}</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Discount</td>
+                                    <td align='right'>-{totalDiscount}</td>
+                                </tr>
+                                <tr>
+                                    <td>Delivery Charged</td>
+                                    <td align='right'>+{cartData.length * 200 }</td>
+                                </tr>
+                                <tr style={{fontWeight : "bold"}}>
+                                    <td>Finale Amount</td>
+                                    <td align='right'>{ totalPrice - totalDiscount + (cartData.length * 200) }</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    
+                    
+                    
+                    
                 </div>
             </div>
             

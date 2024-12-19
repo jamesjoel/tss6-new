@@ -3,6 +3,11 @@ import { API_URL, API_PATH } from '../../constants/API_URL'
 import axios from 'axios'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { Modal, Button } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import {addCart} from '../../redux/CartSlice'
+
+
+
 /*
     interface PRO{
         title : String,
@@ -13,14 +18,24 @@ import { Modal, Button } from 'react-bootstrap'
     }
 */
 const Detail = () => {
+  let dispatch = useDispatch();
+  let navigate = useNavigate();
     const [show, setShow] = useState(false);
+    const [showMsg, setShowMsg] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const handleCloseMsg = (nav)=>{
+
+    setShowMsg(false);
+    navigate(nav);
+  }
+  const handleShowMsg = ()=>setShowMsg(true);
+
 
     let param = useParams();
-    let navigate = useNavigate();
+    
     let BuyNow;
     let [pro, setPro] = useState({});
     useEffect(()=>{
@@ -48,6 +63,13 @@ const Detail = () => {
         navigate("/login")
     }
 
+
+    let addToCart = (pro)=>{
+      setShowMsg(true);
+
+      dispatch(addCart(pro))
+
+    }
 
   return (
     <>
@@ -77,6 +99,30 @@ const Detail = () => {
       </Modal>
 
 
+      <Modal
+        show={showMsg}
+        onHide={handleCloseMsg}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header>
+          <Modal.Title>Message</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          This Item Added in you Cart
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="success" onClick={()=>handleCloseMsg("/products")}>
+            Continue Shopping
+          </Button>
+          <Button variant="danger" onClick={()=>handleCloseMsg("/mycart")}>
+            Go To Cart
+          </Button>
+          
+        </Modal.Footer>
+      </Modal>
+
+
     <div className="container my-4" style={{minHeight : "700px"}}>
 
        <div className="row">
@@ -90,7 +136,7 @@ const Detail = () => {
                     <div className="col-md-5">
                         <img src={`${API_PATH}/${pro.image}`} className='img-thumbnail'/>
                         <br />
-                        <button className='btn btn-info m-3'>Add to Cart</button>
+                        <button onClick={()=>addToCart(pro)} className='btn btn-info m-3'>Add to Cart</button>
                         {BuyNow}
                     </div>
                     <div className="col-md-7">
